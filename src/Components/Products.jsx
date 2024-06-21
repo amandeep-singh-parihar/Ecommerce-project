@@ -1,9 +1,30 @@
-import React from 'react'
+import React from "react";
 
-function Products() {
+function Products({ post }) {
   return (
-    <div>Products</div>
-  )
+    <div>
+      <div>
+        <p>{post.title}</p>
+      </div>
+
+      <div>{post.description}</div>
+
+      <div>
+        <img src={post.image} />
+      </div>
+
+      <div>
+        <p>{post.price}</p>
+      </div>
+
+      <button>
+        { true ? 
+          <p>Remove Item</p> : 
+          <p>Add to Cart</p>
+        }
+        </button>
+    </div>
+  );
 }
 
-export default Products
+export default Products;
