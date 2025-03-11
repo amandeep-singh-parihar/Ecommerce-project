@@ -13,7 +13,7 @@ function Navbar() {
           </div>
         </NavLink>
 
-        <div>
+        <div> 
 
           <NavLink to="/">
             <p>Home</p>
