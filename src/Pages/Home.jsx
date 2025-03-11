@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import Spinner from "../Components/Spinner";
-import Products from "../Components/Products";
+import { useState, useEffect } from 'react';
+import Spinner from '../Components/Spinner.jsx';
+import Product from '../Components/Products.jsx';
 
-function Home() {
-  const API_URL = "https://fakestoreapi.com/products";
+const Home = () => {
+  const API_URL = 'https://fakestoreapi.com/products';
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useState([]);
 
@@ -13,9 +13,10 @@ function Home() {
     try {
       const res = await fetch(API_URL);
       const data = await res.json();
+
       setPosts(data);
     } catch (error) {
-      console.log("Error");
+      console.log('Error aagya ji');
       setPosts([]);
     }
     setLoading(false);
@@ -30,18 +31,18 @@ function Home() {
       {loading ? (
         <Spinner />
       ) : posts.length > 0 ? (
-        <div>
+        <div className="grid  xs:gridcols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl p-2 mx-auto space-y-10 space-x-5 min-h-[80vh]">
           {posts.map((post) => (
-            <Products key={post.id} post={post} />
+            <Product key={post.id} post={post} />
           ))}
         </div>
       ) : (
-        <div>
+        <div className="flex justify-center items-center">
           <p>No Data Found</p>
         </div>
       )}
     </div>
   );
-}
+};
 
 export default Home;
