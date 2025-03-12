@@ -33,7 +33,7 @@ Follow these steps to run the project locally:
 ### 1️⃣ Clone the Repository
 
 ```sh
-git https://github.com/amandeep-singh-parihar/Ecommerce-project
+git clone https://github.com/amandeep-singh-parihar/Ecommerce-project
 
 cd ecommerce-proj
 ```
